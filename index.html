@@ -179,15 +179,15 @@
     </div>
 
 <!-- Modal Structure -->
-<div id="projectModal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3);">
-    <div class="modal-content" style="background:#fff; margin:5% auto; padding:2rem; border-radius:16px; max-width:900px; position:relative; box-shadow:0 4px 32px rgba(0,0,0,0.18);">
-        <span class="close" id="closeModal" style="position:absolute; top:18px; right:28px; font-size:2rem; cursor:pointer;">&times;</span>
-        <div style="max-height:70vh; overflow-y:auto;">
+<div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+        <button class="close" id="closeModal" aria-label="Close modal">&times;</button>
+        <div class="modal-scroll">
             <div class="modal-body" id="modalBody">
                 <!-- Project details will be injected here -->
             </div>
             <!-- Project Details Section -->
-            <div id="modalProjectDetails" style="margin-top:2.5rem; border-top:1px solid #eee; padding-top:2rem;">
+            <div id="modalProjectDetails" class="modal-project-details">
                 <!-- Project full details will be injected here -->
             </div>
         </div>
@@ -319,6 +319,15 @@ const projectDetails = [
 const modal = document.getElementById('projectModal');
 const closeModal = document.getElementById('closeModal');
 const modalBody = document.getElementById('modalBody');
+
+function openModal() {
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+function closeModalFunc() {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const viewBtns = document.querySelectorAll('.view-btn');
@@ -510,54 +519,49 @@ document.addEventListener('DOMContentLoaded', function() {
             else {
                 document.getElementById('modalProjectDetails').innerHTML = '';
             }
-            modal.style.display = 'block';
+            openModal();
         });
     });
+    // close handlers
+    closeModal.addEventListener('click', closeModalFunc);
+    modal.addEventListener('click', function(e){ if (e.target === modal) closeModalFunc(); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModalFunc(); });
 });
-
-closeModal.onclick = function() {
-    modal.style.display = 'none';
-}
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
 </script>
 <!-- Experience Section (moved to bottom) -->
-<section class="experience-section" style="background:#18192a; color:#fff; border-radius:1rem; margin-top:2.5rem; margin-bottom:2.5rem; padding:2.5rem 2rem; box-shadow:0 2px 10px rgba(0,0,0,0.10);">
-    <h2 style="color:#ffd43b; font-size:2rem; font-weight:800; margin-bottom:2rem; letter-spacing:1px;">EXPERIENCE</h2>
-    <div style="margin-bottom:2rem;">
-        <div style="display:flex; align-items:center; gap:1.2rem; margin-bottom:0.5rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Bank_Jago_logo.png" alt="Bank Jago Logo" style="width:56px; height:56px; background:#ffd43b; border-radius:50%; object-fit:contain;">
-            <span style="font-size:1.3rem; font-weight:700; color:#46c6c4;">mBross TECHNOLOGY SERVICES</span>
+<section class="experience-section">
+    <h2>EXPERIENCE</h2>
+    <div class="exp-item">
+        <div class="exp-header">
+            <img class="exp-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Bank_Jago_logo.png" alt="Bank Jago Logo">
+            <span class="exp-company">mBross TECHNOLOGY SERVICES</span>
         </div>
-        <ul style="margin-left:4.5rem;">
-            <li><span style="color:#ffd43b; font-weight:600;">Data Analyst</span> <span style="color:#fff;">(Full time, December 2023 - Present)</span><br>
-                <span style="color:#ccc;">Conduct data analysis to support Anti Money Laundering decision-making process also created ad-hoc and periodic regulatory Anti Money Laundering reporting</span>
+        <ul class="exp-list">
+            <li><span class="exp-role">Data Analyst</span> <span class="exp-period">(Full time, December 2023 - Present)</span><br>
+                <span class="exp-desc">Conduct data analysis to support Anti Money Laundering decision-making process also created ad-hoc and periodic regulatory Anti Money Laundering reporting</span>
             </li>
         </ul>
     </div>
-    <div style="margin-bottom:2rem;">
-        <div style="display:flex; align-items:center; gap:1.2rem; margin-bottom:0.5rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/RevoU_logo.png" alt="RevoU Logo" style="width:56px; height:56px; background:#ffd43b; border-radius:50%; object-fit:contain;">
-            <span style="font-size:1.3rem; font-weight:700; color:#ffd43b;">Freelance</span>
+    <div class="exp-item">
+        <div class="exp-header">
+            <img class="exp-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/RevoU_logo.png" alt="RevoU Logo">
+            <span class="exp-company exp-company-accent">Freelance</span>
         </div>
-        <ul style="margin-left:4.5rem;">
-            <li><span style="color:#ffd43b; font-weight:600;">Data Analyst Mentor</span> <span style="color:#fff;">(Part-time, 2024)</span><br>
-                <span style="color:#ccc;">Conducted mentoring session every week for 48 students to optimize their data analytics learning, utilizing tools like SQL, Google Looker Studio, and Google Sheets</span>
+        <ul class="exp-list">
+            <li><span class="exp-role">Data Analyst Mentor</span> <span class="exp-period">(Part-time, 2024)</span><br>
+                <span class="exp-desc">Conducted mentoring session every week for 48 students to optimize their data analytics learning, utilizing tools like SQL, Google Looker Studio, and Google Sheets</span>
             </li>
-            <li><span style="color:#ffd43b; font-weight:600;">Data Analyst Associate</span> <span style="color:#fff;">(Virtual Internship, 2023 - 2024)</span><br>
-                <span style="color:#ccc;">Executed hands on of stealth digital marketing dataset as part of Data Analytics Virtual Internship with RevoU x Zurich</span>
+            <li><span class="exp-role">Data Analyst Associate</span> <span class="exp-period">(Virtual Internship, 2023 - 2024)</span><br>
+                <span class="exp-desc">Executed hands on of stealth digital marketing dataset as part of Data Analytics Virtual Internship with RevoU x Zurich</span>
             </li>
         </ul>
     </div>
-    <div>
-        <div style="display:flex; align-items:center; gap:1.2rem; margin-bottom:0.5rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Bank_Tabungan_Negara_logo.png" alt="Bank BTN Logo" style="width:56px; height:56px; background:#ffd43b; border-radius:50%; object-fit:contain;">
-            <span style="font-size:1.3rem; font-weight:700; color:#ffd43b;">Data Scientist Intern (Othello Institute) Tbk</span>
+    <div class="exp-item">
+        <div class="exp-header">
+            <img class="exp-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Bank_Tabungan_Negara_logo.png" alt="Bank BTN Logo">
+            <span class="exp-company exp-company-accent">Data Scientist Intern (Othello Institute) Tbk</span>
         </div>
-        <ul style="margin-left:4.5rem;">
+        <ul class="exp-list">
             <li><span style="color:#ffd43b; font-weight:600;">Loan Monitoring and Restructuring Analyst</span> <span style="color:#fff;">(Fulltime, 2022)</span></li>
             <li><span style="color:#ffd43b; font-weight:600;">Commercial Asset Management Analyst</span> <span style="color:#fff;">(Full time, 2018 - 2022)</span></li>
             <li><span style="color:#ffd43b; font-weight:600;">Commercial Loan Analyst</span> <span style="color:#fff;">(Full time, 2017-2018)</span></li>
