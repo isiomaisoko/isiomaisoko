@@ -130,14 +130,14 @@
                     <!-- Project Card 3 -->
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/400x200?text=Iphone+15+Sentimental+Analysis" alt="Iphone 15 Sentimental Analysis">
+                            <img src="Web_app1.jfif" alt="E-Commerce Sales Performance & Analytics App">
                             <div class="project-tags">
                                 <span class="tag python">Python</span>
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3>Iphone 15 Sentimental Analysis - Python</h3>
-                            <p>Customer Sentiment Analysis Objective: As a Data Analyst at Flipkart, you have been tasked with...</p>
+                            <h3>E-Commerce Sales Performance & Analytics App - Python</h3>
+                            <p>An Interactive and dynamic web App for analyzing sales performance....</p>
                             <a href="#" class="view-btn">View Projects</a>
                         </div>
                     </div>
@@ -256,20 +256,20 @@ const projectDetails = [
             </div>`
     },
     {
-        title: "Iphone 15 Sentimental Analysis - Python",
-        image: "https://via.placeholder.com/400x200?text=Iphone+15+Sentimental+Analysis",
+        title: "E-Commerce Sales Performance & Analytics App - Python",
+        image: "Web_app.jpg",
         tags: ["Python"],
-        description: "Customer Sentiment Analysis Objective: As a Data Analyst at Flipkart, you have been tasked with...",
-        details: `<h2>Iphone 15 Sentimental Analysis - Python</h2>
-            <img src='https://via.placeholder.com/400x200?text=Iphone+15+Sentimental+Analysis' style='border:3px solid orange; border-radius:16px; margin-bottom:1rem;'>
+        description: "This Streamlit web application provides an interactive and dynamic dashboard for analyzing e-commerce sales performance...",
+        details: `<h2>E-Commerce Sales Performance & Analytics App - Python</h2>
+            <img src='Web_app.jpg' style='border:3px solid orange; border-radius:16px; margin-bottom:1rem;'>
             <div style='margin-bottom:1rem;'>
                 <span style='background:#fff; color:#3776ab; border:1px solid #3776ab; border-radius:8px; padding:4px 12px; font-weight:500;'>Python</span>
             </div>
-            <p>Customer Sentiment Analysis Objective: As a Data Analyst at Flipkart, you have been tasked with...</p>
+            <p>This Streamlit web application provides an interactive and dynamic dashboard for analyzing e-commerce sales performance...</p>
             <div style='margin-top:1rem;'>
-                <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; display:inline-block;'><i class='fas fa-external-link-alt'></i> View Project</a>
-                <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; margin-right:1rem; display:inline-block;'><i class='fab fa-github'></i> View on Github</a>
-                <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; display:inline-block;'><i class='fas fa-external-link-alt'></i> View Project</a>
+                <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; margin-right:1rem; display:inline-block;'><i class='fab fa-linkedin'></i> View Project Engagement</a>
+                <a href='https://github.com/isiomaisoko/andersonstore' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; margin-right:1rem; display:inline-block;'><i class='fab fa-github'></i> View on Github</a>
+                <a href='https://www.dropbox.com/scl/fi/gue78g1t1peno02ge5lub/E-Commerce-Sales-Performance-Analytics-Web-App.pdf?rlkey=fombnessumrmhea1ptrr3ai42&st=uuea59s5&dl=0' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; display:inline-block;'><i class='fas fa-external-link-alt'></i> View Project</a>
                 </div>`
     },
      {
@@ -319,7 +319,7 @@ const projectDetails = [
             <p>Customer Sentiment Analysis Objective: As a Data Analyst at Flipkart, you have been tasked with...</p>
             <div style='margin-top:1rem;'>
                 <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; display:inline-block;'><i class='fas fa-external-link-alt'></i> View Project</a>
-                <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; margin-right:1rem; display:inline-block;'><i class='fab fa-github'></i> View on Github</a>
+                <a href='https://github.com/isiomaisoko/andersonstore' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; margin-right:1rem; display:inline-block;'><i class='fab fa-github'></i> View on Github</a>
                 <a href='#' style='background:#2563eb; color:#fff; border-radius:8px; padding:0.7rem 1.5rem; text-decoration:none; font-weight:600; display:inline-block;'><i class='fas fa-external-link-alt'></i> View Project</a>
                 </div>`
     },
@@ -475,30 +475,90 @@ document.addEventListener('DOMContentLoaded', function() {
             else if (idx === 2) {
                 document.getElementById('modalProjectDetails').innerHTML = `
                     <h3 style="margin-bottom:1rem;">Project Details</h3>
-                    <h2 style="font-weight:800; margin-bottom:1rem;">E-COMMERCE SALES ANALYSIS<br>PROJECT OVERVIEW</h2>
-                    <p>As a Data Analyst working at <b>Target Sales Company</b>, your primary responsibility is to analyze and extract actionable insights from the company's vast dataset to drive strategic decision-making. The dataset contains detailed information on orders, customers, products, regions, and operational metrics, providing an excellent opportunity to demonstrate your expertise in SQL, visualization tools like Power BI/Tableau, and Python for machine learning.<br>
-                    This capstone project is designed to challenge your analytical skills and expose you to real-world business scenarios. You will work through three key phases: Advanced SQL queries for data extraction, visualizing insights using Power BI/Tableau, and predictive analytics with Python.</p>
-                    <p><b>Dataset Link:</b> <a href="https://drive.google.com/file/d/1ePnRbauLEyaJMqEgH0GqvL49nReeeUVW/view" target="_blank">https://drive.google.com/file/d/1ePnRbauLEyaJMqEgH0GqvL49nReeeUVW/view</a></p>
-                    <h3 style="margin-top:2rem;">Phase 1: SQL Analysis – Advanced Queries</h3>
-                    <p>To upload data to SQL use the following code snippet and edit according to the requirement.<br>
-                    <a href="https://github.com/Ayushi0214/SQL-Python-Ecommerce-Project/blob/main/csv_to_sql.py" target="_blank">https://github.com/Ayushi0214/SQL-Python-Ecommerce-Project/blob/main/csv_to_sql.py</a></p>
-                    <h3>Objective:</h3>
-                    <p>To perform deep data analysis using advanced MySQL queries and extract actionable insights to answer business questions related to sales performance, customer behavior, operational efficiency, and time trends.</p>
-                    <h3>Tasks and Questions:</h3>
-                    <b>1. Sales Performance Analysis:</b>
+                    <h2 style="font-weight:800; margin-bottom:1rem;">E-Commerce Sales Performance & Analytics Web App<br>PROJECT OVERVIEW</h2>
+                    <p>This Streamlit web application provides an <b>interactive and dynamic dashboard</b>for analyzing e-commerce sales performance. The tool enables business owners, analysts, and sales teams to explore sales trends, track KPIs, and uncover insights that support data-driven decision-making.<br>
+                    </p><br>
+                    <p><b>Web App Link:</b> <a href="https://andersonstores.streamlit.app/" target="_blank">https://andersonstores.streamlit.app/</a></p><br>
+                    <p><b>Dataset Link:</b> <a href="https://github.com/isiomaisoko/andersonstore/blob/main/Anderson%20stores%20sales%20data.xlsx" target="_blank">https://github.com/isiomaisoko/andersonstore/blob/main/Anderson%20stores%20sales%20data.xlsx</a></p>
+                    <h3 style="margin-top:2rem;"></h3>
+                    <p><br>
+                    <a href="" target="_blank"></a></p>
+                    <h3></h3>
+                    <p></p>
+                    <h3>Key Features:</h3>
+                    <b>•	Upload Your Own Data</b>
                     <ul>
-                        <li>Write a query to calculate total sales revenue per category, sub-category, and region.</li>
-                        <li>Identify the top 5 best-selling products by both sales revenue and quantity sold.</li>
+                        <li>Easily upload an Excel file containing sales records. The dashboard automatically reads and processes the dataset.</li>
+                        <li></li>
                     </ul>
-                    <b>2. Customer Insights:</b>
+                    <b>•	Powerful Interactive Filtering</b>
                     <ul>
-                        <li>Find the most loyal customers by calculating their purchase frequency and total spend.</li>
-                        <li>Find the most loyal customers by calculating their purchase frequency and total spend.</li>
+                        <li>Filter and segment performance by:</li>
+                        <li>•	Product</li>
+                        <li>•	Category</li>
+                        <li>•	Region</li>
+                        <li>•	Custom date range</li>
+                        <li>This allows a focused exploration of specific customer or product segments.</li>
+                        <li></li>
                     </ul>
-                    <b>3. Customer Insights:</b>
+                    <b>•	Automated KPI Calculations (Real-Time)</b>
                     <ul>
-                        <li>Find the most loyal customers by calculating their purchase frequency and total spend.</li>
-                        <li>Find the most loyal customers by calculating their purchase frequency and total spend.</li>
+                        <li>The dashboard dynamically displays:</li>
+                        <li>•	Total Revenue</li>
+                        <li>•	Total Units Sold</li>
+                        <li>•	Total Profit</li>
+                        <li>•	Average Order Value (AOV)</li>
+                        <li>•	Profit per Order</li>
+                        <li></li>
+                    </ul>
+                    <b>•	Interactive Data Visualizations</b>
+                    <ul>
+                        <li>Visual charts update instantly based on applied filters:</li>
+                        <li>•	Monthly Revenue Trend</li>
+                        <li>•	Monthly Profit Trend</li>
+                        <li>•	Revenue by Product</li>
+                        <li>•	Category Revenue Distribution (Pie Chart)</li>
+                        <li></li>
+                    </ul>
+                    <b>•	Downloadable Insights</b>
+                    <ul>
+                        <li>Export cleaned and filtered datasets for reporting, sharing, or deeper offline analysis.</li>
+                        <li></li>
+                    </ul>
+                    <b>•	Executive Summary & Business Intelligence Insights</b>
+                    <ul>
+                        <li>Automatically generated insights help decision-makers:</li>
+                        <li>•	Identify top-performing products and regions</li>
+                        <li>•	Spot growth opportunities</li>
+                        <li>•	Detect profit margin strengths and weaknesses</li>
+                        <li>•	Understand revenue trends over time</li>
+                        <li></li>
+                    </ul>
+                    <b>What This Dashboard Helps You Discover</b>
+                    <ul>
+                        <li>•	Which products drive the most revenue</li>
+                        <li>•	Which categories are underperforming or dominating</li>
+                        <li>•	How regions differ in performance</li>
+                        <li>•	Whether revenue and profit are trending upward or downward</li>
+                        <li>•	How efficiently your business converts orders into profit</li>
+                        <li></li>
+                    </ul>
+                    </ul>
+                    <b>Tech Stack</b>
+                    <ul>
+                        <li>Streamlit -	Web App Interface</li>
+                        <li>Pandas - Data Processing</li>
+                        <li>Plotly Express -	Interactive Charts & Visualizations</li>
+                        <li>OpenPyXL -	Excel File Reading</li>
+                        <li></li>
+                    </ul>
+                    <b>Ideal Use Cases</b>
+                    <ul>
+                        <li>•	E-commerce & retail sales performance tracking</li>
+                        <li>•	Inventory & product optimization analysis</li>
+                        <li>•	Business intelligence & decision-making</li>
+                        <li>•	Reporting dashboards for management and executives</li>
+                        <li></li>
                     </ul>
                 `;
             }
